@@ -29,8 +29,9 @@ Possible improvements that I think worth doing and not too hard include:
 
 4.An option to have leaky compressor
 
-=================
+
 Explanation of Parameters:
+=================
 
 Area: size of engine
 
