@@ -10,6 +10,8 @@ Basically a re-write of NASA EngineSim's code. Using SI units and clear nominati
 
 Still using stead-state model, a detailed explanation can be found http://en.wikipedia.org/wiki/Jet_engine_performance
 
+See the Excel table included for engine specification.
+
 Improvements over the original program include: 
 
 1.Simple off-design calculation of compressors
@@ -18,6 +20,7 @@ Improvements over the original program include:
 
 3.All engine is one type
 
+4.An option to mix fan duct and core flow before the nozzle
 
 Possible improvements that I think worth doing and not too hard include:
 
@@ -25,15 +28,13 @@ Possible improvements that I think worth doing and not too hard include:
 
 2.Or use variable eta_c with Mach number
 
-3.An option to mix fan duct and core flow before the nozzle -- need thinking
-
-4.An option to have leaky compressor
+3.An option to have leaky compressor
 
 
 Explanation of Parameters:
 =================
 
-Area: size of engine
+Area: size of engine, does not include fan area
 
 TPR: total pressure recovery of inlet. =1 at low Mach and decrease as Mach number increase
 
@@ -61,6 +62,6 @@ Design Temperature: the air temperature of the design point
 
 Throttle: if afterburner is used, 66% Throttle=mil thrust, 100% Throttle=full afterburner
 
-
+Exhaust Mixer: gas from engine core and fan duct are mixed before the nozzle
 
 
