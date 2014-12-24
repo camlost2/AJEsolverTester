@@ -65,6 +65,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -73,7 +74,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(61, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "2";
+            this.textBox1.Text = "0.29";
             // 
             // label1
             // 
@@ -90,7 +91,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(61, 20);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "0";
+            this.textBox2.Text = "0.36";
             // 
             // label2
             // 
@@ -107,7 +108,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(61, 20);
             this.textBox4.TabIndex = 1;
-            this.textBox4.Text = "0";
+            this.textBox4.Text = "3.8";
             // 
             // label4
             // 
@@ -124,7 +125,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(61, 20);
             this.textBox5.TabIndex = 1;
-            this.textBox5.Text = "12";
+            this.textBox5.Text = "32";
             // 
             // label5
             // 
@@ -141,7 +142,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(61, 20);
             this.textBox6.TabIndex = 1;
-            this.textBox6.Text = "1200";
+            this.textBox6.Text = "1620";
             // 
             // label6
             // 
@@ -158,7 +159,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(61, 20);
             this.textBox7.TabIndex = 1;
-            this.textBox7.Text = "2000";
+            this.textBox7.Text = "2850";
             // 
             // label7
             // 
@@ -209,7 +210,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(61, 20);
             this.textBox9.TabIndex = 1;
-            this.textBox9.Text = "0.90";
+            this.textBox9.Text = "0.7";
             // 
             // label9
             // 
@@ -326,7 +327,7 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(61, 20);
             this.textBox12.TabIndex = 1;
-            this.textBox12.Text = "46E6";
+            this.textBox12.Text = "22.5E6";
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // label15
@@ -389,11 +390,24 @@
             this.label12.TabIndex = 2;
             this.label12.Text = "TPR";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(501, 105);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(92, 17);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Exhaust Mixer";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 506);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.vScrollBar3);
@@ -432,7 +446,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "AJE Solver test";
+            this.Text = "AJE Engine Tester";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -478,6 +492,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

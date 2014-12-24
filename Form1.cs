@@ -205,15 +205,15 @@ namespace AJE2Tester
 
         private void button2_Click(object sender, EventArgs e)
         {
-            double temperature = hScrollBar1.Value + 198;
+            double temperature = hScrollBar1.Value + 188;
             double speed = hScrollBar2.Value * 10.0;
             double pressure = vScrollBar3.Value;
             double throttle = 100.0 - vScrollBar2.Value;
             
-            status_string = "Temperature:\t" + temperature.ToString() + " K"
-                +"\t\t Throttle:\t\t" + throttle.ToString() + " %"
-                +"\t\t Pressure:\t\t" + pressure.ToString() + " Kpa"
-                +"\t\t Speed:\t\t" + speed.ToString() + " m/s";
+            status_string = "Temperature:\t" + temperature.ToString() + " K\r\n"
+                + "Throttle:\t\t" + throttle.ToString() + " %\r\n"
+                + "Pressure:\t\t" + pressure.ToString() + " Kpa\r\n"
+                + "Speed:\t\t" + speed.ToString() + " m/s\r\n";
 
             aje.InitializeOverallEngineData(
                 Area,
@@ -228,7 +228,9 @@ namespace AJE2Tester
                 eta_n,
                 FHV,
                 TIT,
-                TAB);
+                TAB,
+                checkBox1.Checked
+            );
             aje.CalculatePerformance(pressure, temperature, speed, throttle/100);
             result_string = aje.debugstring;
         }
