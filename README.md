@@ -64,4 +64,6 @@ Throttle: if afterburner is used, 66% Throttle=mil thrust, 100% Throttle=full af
 
 Exhaust Mixer: gas from engine core and fan duct are mixed before the nozzle
 
+maxThrust: a hardcap on thrust
 
+maxT3: highest temperature that a compressor can tolerate, use this as a speed limit
