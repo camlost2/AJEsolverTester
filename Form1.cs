@@ -215,6 +215,27 @@ namespace AJE2Tester
                 + "Pressure:\t\t" + pressure.ToString() + " Kpa\r\n"
                 + "Speed:\t\t" + speed.ToString() + " m/s\r\n";
 
+            status_string += "\r\n\r\n";
+            status_string += "\tMODULE\r\n";
+            status_string += "\t{\r\n";
+            status_string += "\t\tname = AJEModule\r\n";
+            status_string += "\t\tArea = " + Area.ToString() + "\r\n";
+            status_string += "\t\tBPR = " + BPR.ToString() + "\r\n";
+            status_string += "\t\tCPR = " + CPR.ToString() + "\r\n";
+            status_string += "\t\tFPR = " + FPR.ToString() + "\r\n";
+            status_string += "\t\tMdes = " + Mach_D.ToString() + "\r\n";
+            status_string += "\t\tTdes = " + Temp_D.ToString() + "\r\n";
+            status_string += "\t\teta_c = " + eta_c.ToString() + "\r\n";
+            status_string += "\t\teta_t = " + eta_t.ToString() + "\r\n";
+            status_string += "\t\teta_n = " + eta_n.ToString() + "\r\n";
+            status_string += "\t\tFHV = " + FHV.ToString() + "\r\n";
+            status_string += "\t\tTIT = " + TIT.ToString() + "\r\n";
+            status_string += "\t\tTAB = " + TAB.ToString() + "\r\n";
+            status_string += "\t\texhaustMixer = " + checkBox1.Checked.ToString() + "\r\n";
+            status_string += "\t\tmaxThrust = 999999\r\n";
+            status_string += "\t\tmaxT3 = 9999\r\n";
+            status_string += "\t}\r\n\r\n\r\n";
+
             aje.InitializeOverallEngineData(
                 Area,
                 TPR,
