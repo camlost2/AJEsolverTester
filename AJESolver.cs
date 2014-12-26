@@ -252,9 +252,9 @@ namespace AJE2Tester
 
 
 
-            double netthrust= thrust - mdot * (1 + BPR) * (velocity);//ram drag
+            double netthrust = thrust - mdot * (1 + (exhaustMixer ? 0 : BPR)) * (velocity);//ram drag
 
-            Isp = thrust / (mdot * ff_ab * 9.81);
+            Isp = netthrust / (mdot * ff_ab * 9.81);
 
             debugstring = "";
             debugstring += "TTR:\t" + TTR.ToString("F3") + "\r\n";
