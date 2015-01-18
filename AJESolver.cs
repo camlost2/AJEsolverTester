@@ -192,7 +192,7 @@ namespace AJE2Tester
                 Cp_t = CalculateCp(T6, ff);
                 Cv_t = Cp_t / gamma_t;
                 R_t = Cv_t * (gamma_t - 1);
-       
+
             }
             else
             {
@@ -245,35 +245,33 @@ namespace AJE2Tester
                 double snpr = P2 / p0;
                 double ues = Math.Sqrt(2.0 * R_c / fac1 * T2 * eta_n * (1.0 - Math.Pow(1.0 / snpr, fac1)));
                 double pfexit = (snpr <= 1.893) ? p0 : .52828 * P2; //exit pressure of fan 
-                if (snpr <= 1.893) pfexit = p0;
-                else pfexit = .52828 * P2;
-                thrust += BPR * ues * mdot + (pfexit - p0) * BPR * Aref;
+                thrust += BPR * ues * mdot / (1 + ff_ab) + (pfexit - p0) * BPR * Aref;
             }
 
 
+            double netthrust = thrust - mdot / (1 + ff_ab) * (1 + (exhaustMixer ? 0 : BPR)) * (velocity);//ram drag
 
-            double netthrust = thrust - mdot * (1 + (exhaustMixer ? 0 : BPR)) * (velocity);//ram drag
+            Isp = thrust / (mdot * ff_ab * 9.81);
+              
+              debugstring = "";
+              debugstring += "TTR:\t" + TTR.ToString("F3") + "\r\n";
+              debugstring += "CPR:\t" + prat3.ToString("F3") + "\r\n"; ;
+              debugstring += "p0: " + p0.ToString("F2") + "\tt0: " + t0.ToString("F2") + "\r\n";
+              debugstring += "P1: " + P1.ToString("F2") + "\tT1: " + T1.ToString("F2") + "\r\n";
+              debugstring += "P2: " + P2.ToString("F2") + "\tT2: " + T2.ToString("F2") + "\r\n";
+              debugstring += "P3: " + P3.ToString("F2") + "\tT3: " + T3.ToString("F2") + "\r\n";
+              debugstring += "P4: " + P4.ToString("F2") + "\tT4: " + T4.ToString("F2") + "\r\n";
+              debugstring += "P5: " + P5.ToString("F2") + "\tT5: " + T5.ToString("F2") + "\r\n";
+              debugstring += "P6: " + P6.ToString("F2") + "\tT6: " + T6.ToString("F2") + "\r\n";
+              debugstring += "P7: " + P7.ToString("F2") + "\tT7: " + T7.ToString("F2") + "\r\n";
+              debugstring += "EPR: " + epr.ToString("F2") + "\tETR: " + etr.ToString("F2") + "\r\n";
 
-            Isp = netthrust / (mdot * ff_ab * 9.81);
-
-            debugstring = "";
-            debugstring += "TTR:\t" + TTR.ToString("F3") + "\r\n";
-            debugstring += "CPR:\t" + prat3.ToString("F3") + "\r\n"; ;
-            debugstring += "p0: " + p0.ToString("F2") + "\tt0: " + t0.ToString("F2") + "\r\n";
-            debugstring += "P1: " + P1.ToString("F2") + "\tT1: " + T1.ToString("F2") + "\r\n";
-            debugstring += "P2: " + P2.ToString("F2") + "\tT2: " + T2.ToString("F2") + "\r\n";
-            debugstring += "P3: " + P3.ToString("F2") + "\tT3: " + T3.ToString("F2") + "\r\n";
-            debugstring += "P4: " + P4.ToString("F2") + "\tT4: " + T4.ToString("F2") + "\r\n";
-            debugstring += "P5: " + P5.ToString("F2") + "\tT5: " + T5.ToString("F2") + "\r\n";
-            debugstring += "P6: " + P6.ToString("F2") + "\tT6: " + T6.ToString("F2") + "\r\n";
-            debugstring += "P7: " + P7.ToString("F2") + "\tT7: " + T7.ToString("F2") + "\r\n";
-            debugstring += "EPR: " + epr.ToString("F2") + "\tETR: " + etr.ToString("F2") + "\r\n"; 
-            debugstring += "FF: " + ff.ToString("P") + "\t";
-            debugstring += "FF_AB: " + ff_ab.ToString("P") + "\r\n";
-            debugstring += "V8: " + V8.ToString("F2") + "\tA8: " + A8.ToString("F2") + "\r\n";
-            debugstring += "Thrust: " + (thrust / 1000).ToString("F1") + "\tmdot: " + mdot.ToString("F2") + "\r\n";
-            debugstring += "NetThrust: " + (netthrust / 1000).ToString("F1") + "\tSFC: " + (3600 / Isp).ToString("F3") + "\r\n";
-          //Debug.Log(debugstring);
+              debugstring += "FF: " + ff.ToString("P") + "\t";
+              debugstring += "FF_AB: " + ff_ab.ToString("P") + "\r\n";
+              debugstring += "V8: " + V8.ToString("F2") + "\tA8: " + A8.ToString("F2") + "\r\n";
+              debugstring += "Thrust: " + (thrust / 1000).ToString("F1") + "\tmdot: " + mdot.ToString("F2") + "\r\n";
+              debugstring += "NetThrust: " + (netthrust / 1000).ToString("F1") + "\tSFC: " + (3600 / Isp).ToString("F3") + "\r\n";
+              //Debug.Log(debugstring);
         }
 
         public void SetTPR(double t) { TPR = t; }
