@@ -255,7 +255,8 @@ namespace AJE2Tester
               
               debugstring = "";
               debugstring += "TTR:\t" + TTR.ToString("F3") + "\r\n";
-              debugstring += "CPR:\t" + prat3.ToString("F3") + "\r\n"; ;
+              debugstring += "CPR:\t" + prat3.ToString("F3") + "\r\n";
+              debugstring += "M0:\t" + M0.ToString("F3") + "\r\n";
               debugstring += "p0: " + p0.ToString("F2") + "\tt0: " + t0.ToString("F2") + "\r\n";
               debugstring += "P1: " + P1.ToString("F2") + "\tT1: " + T1.ToString("F2") + "\r\n";
               debugstring += "P2: " + P2.ToString("F2") + "\tT2: " + T2.ToString("F2") + "\r\n";

@@ -205,7 +205,7 @@ namespace AJE2Tester
 
         private void button2_Click(object sender, EventArgs e)
         {
-            double temperature = hScrollBar1.Value + 188;
+            double temperature = hScrollBar1.Value + 215;
             double speed = hScrollBar2.Value * 10.0;
             double pressure = vScrollBar3.Value;
             double throttle = 100.0 - vScrollBar2.Value;
